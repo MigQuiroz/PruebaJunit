@@ -1,6 +1,7 @@
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assume.*;
 import static org.hamcrest.CoreMatchers.endsWith;
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.hasItems;
@@ -11,6 +12,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.Collection;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.Test;
@@ -45,5 +48,22 @@ class GeneralAssertions {
 		Collection<String> tested = Arrays.asList(testArray);
 		assertThat("All item meets the criteria", tested,everyItem(not(endsWith("uni"))));
 	}
+	//Assume
+	@Test
+	public void assumeBoolean() {
+		assumeFalse("This should be false", false);
+		assumeTrue("This should be true", true);
+		System.out.println("Boolean ok");
+		}
 	
+	@Test
+	public void noExeption() {
+		try {
+			Integer.parseInt("1");
+		}
+		catch (NumberFormatException e) {
+			assumeNoException("Should not fail",e);
+			System.out.println("No exception happend");
+		}
+	}
 }
