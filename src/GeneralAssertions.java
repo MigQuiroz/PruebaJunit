@@ -15,6 +15,7 @@ import java.util.Collection;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Ignore;
@@ -72,6 +73,10 @@ class GeneralAssertions {
 	@Before 
 	void assumeInSetup() {
 		assumeTrue("It works in setup too", true);
+	}
+	@After
+	void sayhi() {
+		System.out.println("Hi");
 	}
 	@Test
 	@Ignore
