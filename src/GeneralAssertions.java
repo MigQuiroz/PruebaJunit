@@ -15,6 +15,7 @@ import java.util.Collection;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 
+import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.Test;
 import org.junit.runners.MethodSorters;
@@ -65,5 +66,10 @@ class GeneralAssertions {
 			assumeNoException("Should not fail",e);
 			System.out.println("No exception happend");
 		}
+	}
+	
+	@Before 
+	void assumeInSetup() {
+		assumeTrue("It works in setup too", true);
 	}
 }
