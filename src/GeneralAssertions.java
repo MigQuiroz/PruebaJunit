@@ -17,6 +17,7 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 import org.junit.Before;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -72,4 +73,9 @@ class GeneralAssertions {
 	void assumeInSetup() {
 		assumeTrue("It works in setup too", true);
 	}
+	@Test
+	@Ignore
+	public void testIgnorado() {
+	}
+	
 }
